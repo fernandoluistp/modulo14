@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+     <!-- Google fonts -->
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <title>Exercícios Módulo 14</title>
+</head>
+<body>
+    <article class="conteudo-principal">
+        <div class="container box-container">
+            <h2>Exercícios:</h2>
+            <h3>1.	Resolva as operações:</h3>
+
+            <table id="conteudo">
+                <thead id="conteudo-th">
+                    <th>Problema</th>
+                    <th>Resultado</th>
+                    <th>Tipo de Dado</th>
+                </thead>
+            
+            </table>
+
+
+            <div>
+                <p>Na tabela acima, não constam os resultados para as perguntas '10++ =' e '10-- =', pois retornavam erro. Elas poderiam, se consideradas como um valor dentro de uma variável, como:</p>
+                <p>var i = 10<br>i = i++ ou i= i--</p>
+                <p>No caso acima, poderíamos considerar 10++ como 11 e 10-- como 9, dentro de um valor de variável.</p>
+            </div>
+        </div>
+
+        <div class="container box-container">
+    
+            <h3> 2.	Responda as perguntas de acordo com as variáveis:</h3>
+            <ul>
+                <li>var branco = “preto”;</li>
+                <li>var preto = “cinza”;</li>
+                <li>var cinza = “branco”;</li>
+                <li>var carro = “preto”;</li>
+                <li>var valor = 30000;</li>
+                <li>var prestação = 750;</li>
+            </ul>
+
+            <table id="exercicio2">
+                <thead id="exercicio2-th">
+                    <th>Problema</th>
+                    <th>Resultado</th>
+                </thead>
+                <tr>
+                    <td>branco == “branco”</td>
+                    <td><span id="resposta1"></span></td>
+                </tr>
+                <tr>
+                    <td>branco == cinza</td>
+                    <td><span id="resposta2"></span></td>
+                </tr>
+                <tr>
+                    <td>carro === branco</td>
+                    <td><span id="resposta3"></span></td>
+                </tr>
+                <tr>
+                    <td>var cavalo = carro == “preto” ? “cinza” : “marrom”</td>
+                    <td><span id="resposta4"></span></td>
+                </tr>
+                <tr>
+                    <td>Quantas prestações são necessárias para pagar o valor do carro com uma entrada de 3.000? Demonstre a operação.</td>
+                    <td><span id="resposta5"></span></td>
+                </tr>
+                <tr>
+                    <td>Somando as variáveis de cores é formada uma string de quantos caracteres?</td>
+                    <td><span id="resposta6"></span></td>
+                </tr>
+            
+            </table>
+        </div>
+   
+        <div class="container box-container">
+    
+            <h3> Calculadora de parcelas:</h3>
+        
+            <p>Insira abaixo os valores para calcular as parcelas:</p>
+
+            <form method="post" class="calculadora">
+
+                <div class="bloco-form selecionar">
+                    <label for="calcular_numero" class="label-block">Calcular:</label>
+                    <input type="radio" id="calcular_numero" name="calcular" class="radio-parcelas" checked="checked" onclick="ocultarNumeroParcela();"> Número de Parcelas
+                    <input type="radio" id="calcular_valor" name="calcular" class="radio-parcelas" onclick="ocultarValorParcela();"> Valor das Parcelas
+                </div>
+                <div class="campos-flex">
+                    <div class="bloco-form valor-carro">
+                        <label for="valor_carro">Valor do carro:</label>
+                        <input id="valor_carro" name="valor_carro" oninput="validar(this)" type="number" class="input-parcelas">
+                    </div>
+                    <div class="bloco-form valor-entrada">
+                        <label for="valor_entrada">Valor da entrada:</label>
+                        <input id="valor_entrada" name="valor_entrada" oninput="validar(this)" type="number" class="input-parcelas">
+                    </div>
+                    <div id="valorparcela" class="bloco-form valor-parcela">
+ 
+                            <label for="valor_parcela">Valor da Parcela:</label>
+                            <input id="valor_parcela" name="valor_parcela" oninput="validar(this)" type="number" class="input-parcelas">
+
+                    </div>
+                    <div id="numeroparcela" class="bloco-form numero-parcelas">
+
+                            <label for="numero_parcelas">Número de Parcelas:</label>
+                            <input id="numero_parcelas" name="numero_parcelas" oninput="validar(this)" type="number" class="input-parcelas">
+                    </div>
+                </div>
+                    <div class="bloco-form">
+                        <div id="containerjuros">
+                            <label for="juroscheck">Incluir juros simples:</label>
+                            <input type="checkbox" id="juroscheck"> 
+
+                            <div id="incluirjuros">
+                                <label for="juros">Percentual de juros/mês:</label>
+                                <input id="juros" name="juros" type="number" oninput="validar(this)" class="input-parcelas">
+                            </div>
+                        </div>
+
+                    </div>
+                
+                <button id="botaocalcular" type="submit" name="botaocalcular" class="botao-form" onclick="calcularParcelas();">Calcular número de parcelas</button>
+            </form>
+
+            <div id="total-parcelas" class="resultado-parcelas"></div>
+
+        
+         </div>
+    </article>
+
+
+<script src="./js/script.js"></script>
+</body>
+</html>
