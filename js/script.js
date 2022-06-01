@@ -214,18 +214,18 @@ function calcularParcelas() {
 		//document.getElementById("numeroparcela").style.display = "none";
 		document.getElementById("total-parcelas").style.display = "block";
 		var valorTotal = (valorCarro - valorEntrada) / valorParcela;
-		document.getElementById('total-parcelas').innerHTML = "O número total de parcelas para o veículo nas condições acima é de " + valorTotal + " parcelas.";
+		document.getElementById('total-parcelas').innerHTML = "O número total de parcelas para o veículo nas condições acima é de " + parseInt(valorTotal) + " parcelas.";
 	}
 
 	else if (document.getElementById('calcular_valor').checked && document.getElementById('juroscheck').checked == true){
 		document.getElementById("total-parcelas").style.display = "block";
 		var valorTotal = ((valorCarro - valorEntrada) / numeroParcelas) + ((valorCarro - valorEntrada) * (valorJuros / 100)) ;
-		document.getElementById('total-parcelas').innerHTML = "O valor de parcelas para o veículo nas condições acima é de R$ " + valorTotal + " ."} 
+		document.getElementById('total-parcelas').innerHTML = "O valor de parcelas para o veículo nas condições acima é de R$ " + valorTotal.toFixed(2) + " ."} 
 
 	else if (document.getElementById('calcular_valor').checked && document.getElementById('juroscheck').checked == false){
 		var valorTotal = (valorCarro - valorEntrada) / numeroParcelas;
 		document.getElementById("total-parcelas").style.display = "block";
-		document.getElementById('total-parcelas').innerHTML = "O valor de parcelas para o veículo nas condições acima é de R$ " + valorTotal + " ."} 
+		document.getElementById('total-parcelas').innerHTML = "O valor de parcelas para o veículo nas condições acima é de R$ " + valorTotal.toFixed(2) + " ."} 
 
 	
 	
